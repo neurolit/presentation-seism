@@ -1,0 +1,70 @@
+#+TITLE: Présentation Git(lab)
+
+* Git
+** Principes de Git
+*** Instantanés
+*** Les 3 sections
+- copie de travail
+- zone d'index
+- répertoire Git
+*** Les 3 états
+- validé
+- modifié
+- indexé
+*** Qu'est qu'un commit ?
+** Actions habituelles
+*** Configuration de départ
+ #+BEGIN_SRC shell
+ git config --global user.name "Florian Dufour"
+ git config --global user.email "florian.dufour@inria.fr"
+ #+END_SRC
+*** Initialisation d'un dépôt
+ #+BEGIN_SRC shell
+ cd depot/
+ git init
+ #+END_SRC
+*** Ajouter et modifier des fichiers
+ #+BEGIN_SRC shell
+   git status
+   git add list.txt
+   git status
+   git commit -m "Ajout du fichier list.txt"
+ #+END_SRC
+*** visualiser l'historique
+#+BEGIN_SRC shell
+  git log
+  git log -p
+  git log --oneline --decorate
+  git log --oneline --decorate --graph --all
+#+END_SRC
+*** Annuler
+**** Désindexer
+#+BEGIN_SRC shell
+  git reset HEAD test.php
+#+END_SRC
+**** Annuler une modification pas encore commitée
+#+BEGIN_SRC shell
+  git checkout -- README.org
+#+END_SRC
+
+**** Remplacer le dernier commit
+#+BEGIN_SRC shell
+  git commit --amend
+#+END_SRC
+*** Dépôts distants
+#+BEGIN_SRC shell
+  git remote
+  git remote -v
+  git clone
+  git push
+  git fetch
+  git pull
+#+END_SRC
+
+*** Tags
+*** Branches
+* Gitlab
+** Zone personnelle
+** Merge request
+* Liens
+- https://git-scm.com/book/en/v2
